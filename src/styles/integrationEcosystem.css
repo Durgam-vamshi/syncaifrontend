@@ -199,9 +199,19 @@
 
 @media (max-width: 768px) {
   .integration-title {
+    /* background-color: red; */
     width: 100%;
     text-align: center;
     margin-left: auto;
-    margin-right: auto;
+    margin-right:auto;
   }
+}
+
+
+.integration-title {
+  color: #ffffff; /* white for "Our" & "Playbook" */
+}
+
+.integration-title span {
+  color: rgba(249, 115, 22, 0.95); /* orange for "Integration" */
 }
