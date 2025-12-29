@@ -1,0 +1,320 @@
+
+.process-stepper {
+  padding: 14rem 2rem;
+  background: #0b0d10;
+  position: relative;
+}
+
+.process-eyebrow {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(249, 115, 22, 0.85);
+  margin-bottom: 1.2rem;
+}
+
+.process-title {
+  text-align: center;
+  font-size: clamp(3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  margin-bottom: 8rem;
+}
+
+/* ===============================
+   STEPPER LAYOUT
+================================ */
+
+.stepper {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.stepper-line {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(249, 115, 22, 0.6),
+    transparent
+  );
+}
+
+/* ===============================
+   STEP
+================================ */
+
+.step {
+  position: relative;
+  display: flex;
+  gap: 2.4rem;
+  margin-bottom: 7rem;
+  opacity: 0.45;
+  transition: opacity 0.4s ease;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* ===============================
+   INDICATOR
+================================ */
+
+.step-indicator {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 8px rgba(249, 115, 22, 0.15);
+  flex-shrink: 0;
+}
+
+.step-index {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  color: #0b0d10;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.step-content {
+  max-width: 620px;
+}
+
+.step-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.4rem;
+}
+
+.step-subtitle {
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.65);
+  margin-bottom: 1.4rem;
+}
+
+/* ===============================
+   DELIVERABLES (EXPAND)
+================================ */
+
+.step-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.step.active .step-details {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.step-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step-details li {
+  font-size: 0.95rem;
+  color: rgba(226, 232, 240, 0.9);
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.step-details li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: rgba(249, 115, 22, 0.9);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .process-stepper {
+    padding: 10rem 1.5rem;
+  }
+
+  .step {
+    gap: 1.6rem;
+    margin-bottom: 5rem;
+  }
+}
+
+
+
+/* ===============================
+   GAP FIX — OVERRIDES ONLY
+   (No structural changes)
+================================ */
+
+/* Reduce excessive top & bottom padding */
+.process-stepper {
+  padding-top: 8rem !important;
+  padding-bottom: 7rem !important;
+}
+
+/* Reduce space below the title */
+.process-title {
+  margin-bottom: 4.5rem !important;
+}
+
+/* Remove extra space after last step */
+.step:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .process-stepper {
+    padding-top: 6rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  .step {
+    margin-bottom: 3.8rem !important;
+  }
+
+  .step:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+.step {
+  opacity: 0.35;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.step.active {
+  opacity: 1;
+}
+.step.active .step-indicator {
+  box-shadow:
+    0 0 0 6px rgba(255, 120, 0, 0.12),
+    0 0 35px rgba(255, 120, 0, 0.55),
+    0 0 80px rgba(255, 120, 0, 0.25);
+}
+.step.active .step-index {
+  color: #ff7a00;
+  text-shadow:
+    0 0 12px rgba(255, 120, 0, 0.8),
+    0 0 28px rgba(255, 120, 0, 0.4);
+}
+.step:hover {
+  opacity: 1;
+}
+
+.step:hover .step-indicator {
+  box-shadow:
+    0 0 0 6px rgba(255, 120, 0, 0.14),
+    0 0 40px rgba(255, 120, 0, 0.65),
+    0 0 90px rgba(255, 120, 0, 0.35);
+}
+.step.active:hover .step-indicator {
+  box-shadow:
+    0 0 0 6px rgba(255, 120, 0, 0.18),
+    0 0 45px rgba(255, 120, 0, 0.75),
+    0 0 100px rgba(255, 120, 0, 0.45);
+}
+
+
+
+.step-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.35s ease;
+}
+
+.step-subtitle {
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.35s ease;
+}
+
+.step-details li {
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.35s ease;
+}
+.step.active .step-title {
+  color: #ffffff;
+  text-shadow:
+    0 0 10px rgba(255, 120, 0, 0.45),
+    0 0 26px rgba(255, 120, 0, 0.25);
+}
+.step.active .step-details li {
+  color: rgba(255, 255, 255, 0.75);
+}
+.step:hover .step-title {
+  color: #ffffff;
+  text-shadow:
+    0 0 12px rgba(255, 120, 0, 0.55),
+    0 0 30px rgba(255, 120, 0, 0.35);
+}
+
+.step:hover .step-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.step.active:hover .step-title {
+  text-shadow:
+    0 0 14px rgba(255, 120, 0, 0.65),
+    0 0 36px rgba(255, 120, 0, 0.45);
+}
+.step-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.step-subtitle,
+.step-details li {
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.35s ease;
+}
+.step.active .step-title {
+  color: #ffffff; /* FULL WHITE */
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.25),   /* white clarity */
+    0 0 18px rgba(255, 120, 0, 0.35);    /* orange aura */
+}
+.step.active .step-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+.step.active .step-details li {
+  color: rgba(255, 255, 255, 0.85);
+}
+.step:hover .step-title {
+  color: #ffffff;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.35),
+    0 0 22px rgba(255, 120, 0, 0.45);
+}
+
+.step:hover .step-subtitle,
+.step:hover .step-details li {
+  color: rgba(255, 255, 255, 0.9);
+}
+.step.active:hover .step-title {
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.45),
+    0 0 30px rgba(255, 120, 0, 0.55);
+}

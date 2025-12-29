@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-scroll-container] {
+  min-height: 100vh;
+}
+
+[data-scroll-section] {
+  position: relative;
+}
+
+
+[data-scroll-container] {
+  outline: 2px solid red;
+
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+section {
+  scroll-margin-top: 100px; 
+}

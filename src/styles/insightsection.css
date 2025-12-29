@@ -1,0 +1,172 @@
+/* ===============================
+   INSIGHT — THOUGHT LEADERSHIP
+================================ */
+
+.insight-section {
+  padding: 7.5rem 2rem;
+  background: linear-gradient(
+    to bottom,
+    #0b0d10,
+    #0b0d10
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.insight-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   EYEBROW
+================================ */
+
+.insight-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(249, 115, 22, 0.9);
+  margin-bottom: 0.9rem;
+}
+
+/* ===============================
+   TITLE
+================================ */
+
+.insight-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.6rem;
+}
+
+.insight-title span {
+  color: rgba(249, 115, 22, 0.95);
+}
+
+/* ===============================
+   LEAD PARAGRAPH
+================================ */
+
+.insight-lead {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(226, 232, 240, 0.78);
+  max-width: 620px;
+  margin-bottom: 3.8rem;
+}
+
+/* ===============================
+   INSIGHT BLOCK
+================================ */
+
+.insight-block {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 3rem;
+  padding: 3rem 2.8rem;
+  background: rgba(15, 18, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  margin-bottom: 3.2rem;
+}
+
+/* left content */
+.insight-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.insight-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.72);
+  margin-bottom: 1.8rem;
+}
+
+/* ===============================
+   META
+================================ */
+
+.insight-meta {
+  font-size: 0.8rem;
+  color: rgba(226, 232, 240, 0.55);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.insight-author {
+  color: rgba(226, 232, 240, 0.8);
+  font-weight: 500;
+}
+
+.insight-separator {
+  opacity: 0.6;
+}
+
+/* ===============================
+   VISUAL ANCHOR (AHA MARK)
+================================ */
+
+.insight-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.insight-mark {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgba(249, 115, 22, 0.9);
+  opacity: 0.6;
+  line-height: 1;
+}
+
+/* ===============================
+   WHY THIS MATTERS
+================================ */
+
+.insight-why {
+  max-width: 680px;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.insight-why strong {
+  color: rgba(249, 115, 22, 0.9);
+  font-weight: 600;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 720px) {
+  .insight-block {
+    grid-template-columns: 1fr;
+    padding: 2.4rem 2rem;
+  }
+
+  .insight-right {
+    display: none;
+  }
+
+  .insight-title {
+    font-size: 2.1rem;
+  }
+}
+.insight-section {
+  background: #0b0d10;   /* keep black background */
+  color: #ffffff;        /* ⬅ force white text */
+  padding: 8rem 2rem;
+}
+.insight-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff; /* ⬅ white */
+  margin-bottom: 1.5rem;
+}

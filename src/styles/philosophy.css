@@ -1,0 +1,167 @@
+
+.philosophy-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-eyebrow {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(249, 115, 22, 0.85);
+}
+
+.philosophy-title {
+  font-size: clamp(3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  margin-bottom: 3rem;
+}
+
+
+.philosophy-manifesto {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(226, 232, 240, 0.9);
+  max-width: 760px;
+  margin: 0 auto 3.5rem;
+  position: relative;
+}
+
+.philosophy-manifesto::before {
+  content: "“";
+  position: absolute;
+  left: -1.6rem;
+  top: -1.2rem;
+  font-size: 4.5rem;
+  font-family: serif;
+  color: rgba(249, 115, 22, 0.25);
+}
+
+/* ===============================
+   DIVIDER
+================================ */
+
+.philosophy-divider {
+  width: 80px;
+  height: 1px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(249, 115, 22, 0.6),
+    transparent
+  );
+}
+
+/* ===============================
+   EXPLANATION
+================================ */
+
+.philosophy-explanation {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(226, 232, 240, 0.65);
+  margin-bottom: 3.2rem;
+}
+
+/* ===============================
+   FOOTNOTE
+================================ */
+
+.philosophy-footnote {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(249, 115, 22, 0.9);
+}
+
+
+
+
+
+
+
+.philosophy {
+  position: relative;
+  padding: 12rem 2rem;
+  background:
+    /* Core bright energy */
+    radial-gradient(
+      circle 320px at 50% 45%,
+      rgba(249, 115, 22, 0.22),
+      rgba(249, 115, 22, 0.12) 35%,
+      transparent 70%
+    ),
+
+    /* Outer soft halo */
+    radial-gradient(
+      circle 700px at 50% 45%,
+      rgba(249, 115, 22, 0.08),
+      transparent 75%
+    ),
+
+    /* Base */
+    #0b0d10;
+
+  overflow: hidden;
+}
+.philosophy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle 180px at 50% 45%,
+      rgba(255, 140, 60, 0.35),
+      transparent 70%
+    );
+  filter: blur(40px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+
+
+/* ===============================
+   PHILOSOPHY — ENERGY RINGS
+================================ */
+
+.philosophy::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+
+  background:
+    repeating-radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 160, 90, 0.08) 0px,
+      rgba(255, 160, 90, 0.08) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+
+  mask-image:
+    radial-gradient(
+      circle 420px at 50% 45%,
+      rgba(0, 0, 0, 1),
+      transparent 75%
+    );
+
+  opacity: 0.55;
+}
+.philosophy::after {
+  animation: ringDrift 18s linear infinite;
+}
+
+@keyframes ringDrift {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

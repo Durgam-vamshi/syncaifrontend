@@ -1,0 +1,288 @@
+/*  */
+
+
+/* =================================================
+   TRANSFORMATION SECTION — BASE
+================================================= */
+
+.trans-section {
+  background: #030304;
+  padding: 15rem 2rem;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+/* =================================================
+   BACKGROUND PARALLAX TEXT
+================================================= */
+
+.trans-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20vw;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: rgba(249, 115, 22, 0.025);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+  z-index: 0;
+}
+
+/* =================================================
+   HEADER
+================================================= */
+
+.trans-header {
+  text-align: center;
+  margin-bottom: 12rem;
+  position: relative;
+  z-index: 1;
+}
+
+.trans-eyebrow {
+  color: #f97316;
+  letter-spacing: 0.8em;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.trans-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Chaos word — neutral decay */
+.chaos-word {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.is-synced .chaos-word {
+  color: rgba(255, 255, 255, 0.18);
+  text-decoration: line-through;
+  transition: 1s;
+}
+
+/* Sync word — authority */
+.sync-word {
+  color: #ffffff;
+}
+
+/* =================================================
+   PIPELINE VISUAL
+================================================= */
+
+.pipeline-visual {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  z-index: 1;
+}
+
+.pipeline-svg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+}
+
+/* =================================================
+   CHAOS LINES (ORANGE, NOT RED)
+================================================= */
+
+.tangle {
+  fill: none;
+  stroke: rgba(249, 115, 22, 0.12);
+  stroke-width: 1;
+  transition: 1.5s ease;
+}
+
+.is-synced .tangle {
+  stroke: rgba(249, 115, 22, 0);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+/* =================================================
+   UNIFIED PATH
+================================================= */
+
+.main-path {
+  fill: none;
+  stroke: rgba(249, 115, 22, 0.15);
+  stroke-width: 1;
+  transition: 1s ease;
+}
+
+.is-synced .main-path {
+  stroke: url(#lineGrad);
+  stroke-width: 2;
+}
+
+/* =================================================
+   DATA PARTICLE
+================================================= */
+
+.data-blob {
+  fill: #f97316;
+  filter: blur(2px) drop-shadow(0 0 12px rgba(249, 115, 22, 0.8));
+  opacity: 0;
+}
+
+.is-synced .data-blob {
+  opacity: 1;
+  transition: 2s;
+}
+
+/* =================================================
+   STEP NODES
+================================================= */
+
+.step-node {
+  position: absolute;
+  width: 280px;
+  transform: translate(-50%, -50%) scale(0.92);
+  opacity: 0.25;
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.is-synced .step-node {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* =================================================
+   NODE GLASS
+================================================= */
+
+.node-glass {
+  background: rgba(8, 8, 10, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.6rem;
+  border-radius: 4px;
+  backdrop-filter: blur(22px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orange signal bar */
+.node-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: #f97316;
+  transform: translateY(100%);
+  transition: transform 0.8s ease 0.5s;
+}
+
+.is-synced .node-glass::before {
+  transform: translateY(0);
+}
+
+/* =================================================
+   NODE CONTENT
+================================================= */
+
+.node-tag {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  color: #f97316;
+}
+
+.node-info h4 {
+  font-size: 1rem;
+  margin: 0.6rem 0 1.1rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Status labels */
+.status-label {
+  font-size: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.35);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.status-label.optimized {
+  color: #f97316;
+}
+
+/* Values */
+.val-pain {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.val-gain {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.5s ease 1s;
+}
+
+.is-synced .val-gain {
+  opacity: 1;
+  transform: translateX(0);
+  text-shadow: 0 0 12px rgba(249, 115, 22, 0.45);
+}
+
+/* Arrow */
+.arrow-transition {
+  color: #f97316;
+  margin: 6px 0;
+  font-size: 1rem;
+  opacity: 0;
+}
+
+.is-synced .arrow-transition {
+  opacity: 1;
+  transition: 1s ease 0.8s;
+}
+
+/* =================================================
+   MOBILE ADJUSTMENT
+================================================= */
+
+@media (max-width: 900px) {
+  .pipeline-visual {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pipeline-svg {
+    display: none;
+  }
+
+  .step-node {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100%;
+    transform: none !important;
+    opacity: 1;
+  }
+
+  .trans-header {
+    margin-bottom: 6rem;
+  }
+}

@@ -1,0 +1,132 @@
+/* ===============================
+   TESTIMONIALS SECTION
+================================ */
+
+.testimonials {
+  position: relative;
+  padding: 8rem 2rem;
+  background: radial-gradient(
+      circle at top,
+      rgba(249, 115, 22, 0.12),
+      transparent 60%
+    ),
+    #0b0d10;
+  overflow: hidden;
+}
+
+.testimonials-title {
+  text-align: center;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+  margin-bottom: 4rem;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.testimonial-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  /* Ensures children don't overlap during GSAP animations */
+  perspective: 1000px; 
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  /* We remove overflow: hidden here and move it to the inner container 
+     to prevent clipping of the video controls/hover effects */
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.testimonial-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto; 
+  z-index: 2;
+}
+
+
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   VIDEO (FIXED)
+================================ */
+
+.testimonial-video {
+  position: relative;
+  height: 220px; /* Slightly taller for better control spacing */
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  z-index: 10; /* Higher than content to ensure controls work */
+  background: #000;
+}
+
+.testimonial-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* FIX: Forces the browser to prioritize video UI interaction */
+  pointer-events: auto !important;
+  cursor: pointer;
+  
+  position: relative;
+  z-index: 11;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.testimonial-content {
+  padding: 1.8rem 1.6rem 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.testimonial-quote {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.9);
+  margin-bottom: 1.4rem;
+  pointer-events: none; /* Let clicks pass through if user clicks text to play video */
+}
+
+.testimonial-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f97316;
+}
+
+
+.testimonial-card-inner {
+  will-change: transform, opacity;
+}
+
+
+
+.testimonial-card-inner {
+  will-change: transform, opacity;
+}

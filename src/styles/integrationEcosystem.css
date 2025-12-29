@@ -1,0 +1,194 @@
+/* =================================================
+   INTEGRATION ECOSYSTEM — BASE
+================================================= */
+
+.integration-section {
+  padding: clamp(5rem, 10vw, 9rem) 2rem;
+  background: #000;
+}
+
+.integration-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =================================================
+   TITLE
+================================================= */
+
+.integration-title {
+  font-size: clamp(1.9rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.integration-title span {
+  color: rgba(249, 115, 22, 0.95);
+}
+
+.integration-subtitle {
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  color: rgba(226, 232, 240, 0.75);
+  margin-bottom: 3.5rem;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+/* =================================================
+   FILTERS
+================================================= */
+
+.integration-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+}
+
+.filter-btn {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: transparent;
+  color: rgba(226, 232, 240, 0.65);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-btn.active {
+  background: rgba(249, 115, 22, 0.95);
+  color: #000;
+  border-color: transparent;
+}
+
+/* =================================================
+   GRID — MOBILE FIRST & STABLE
+================================================= */
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.4rem;
+  justify-items: center;
+}
+
+/* =================================================
+   CARD
+================================================= */
+
+.integration-card {
+  width: 100%;
+  max-width: 170px;
+  height: 110px;
+  padding: 0.9rem;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: #fff;
+  font-weight: 600;
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.integration-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =================================================
+   CARD CONTENT
+================================================= */
+
+.integration-tag {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.integration-name {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* =================================================
+   COLOR SYSTEM
+================================================= */
+
+.blue { background: #2563eb; }
+.orange { background: #f97316; }
+.navy { background: #1e3a8a; }
+.red { background: #dc2626; }
+.purple { background: #7c3aed; }
+.sky { background: #3b82f6; }
+.lightblue { background: #60a5fa; }
+.gold { background: #ca8a04; }
+.green { background: #16a34a; }
+.burnt { background: #c2410c; }
+.pink { background: #db2777; }
+
+/* =================================================
+   FOOTNOTE
+================================================= */
+
+.integration-footnote {
+  margin-top: 4rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: rgba(226, 232, 240, 0.65);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* =================================================
+   RESPONSIVE REFINEMENTS
+================================================= */
+
+/* Small phones */
+@media (max-width: 360px) {
+  .integration-card {
+    max-width: 260px;
+    height: 95px;
+  }
+
+  .integration-tag {
+    font-size: 1rem;
+  }
+
+  .integration-name {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 640px) {
+  .integration-grid {
+    gap: 1.6rem;
+  }
+}
+
+/* Laptops */
+@media (min-width: 1024px) {
+  .integration-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Large screens / 4K */
+@media (min-width: 1440px) {
+  .integration-inner {
+    max-width: 1300px;
+  }
+
+  .integration-card {
+    max-width: 180px;
+    height: 120px;
+  }
+}

@@ -1,0 +1,190 @@
+.leadSection * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.leadSection {
+  background-color: #000;
+  padding: 120px 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.glassCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 80px; /* Large padding keeps content from edges */
+  backdrop-filter: blur(20px);
+}
+
+/* Header Spacing */
+.formHeader {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.kicker {
+  color: #ff5c00;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.accent {
+  color: #ff5c00;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+  max-width: 500px;
+}
+
+/* Grid Layout - Prevents mixing */
+.inputGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  row-gap: 40px;
+  margin-bottom: 50px;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 20px; /* Space for floating label */
+}
+
+.formInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 0;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.formLabel {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease all;
+  pointer-events: none;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+/* Floating Label Logic */
+.formInput:focus ~ .formLabel,
+.formInput:not(:placeholder-shown) ~ .formLabel {
+  top: 0;
+  font-size: 0.65rem;
+  color: #ff5c00;
+}
+
+.focusLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff5c00;
+  transition: 0.4s ease;
+}
+
+.formInput:focus ~ .focusLine {
+  width: 100%;
+}
+
+/* Action Button Area */
+.actionArea {
+  margin-top: 20px;
+}
+
+.submitBtn {
+  background: #ff5c00;
+  color: #fff;
+  border: none;
+  padding: 20px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btnArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.submitBtn:hover .btnArrow {
+  transform: translateX(8px);
+}
+
+.successBox {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ff5c00;
+  color: #ff5c00;
+  background: rgba(255, 92, 0, 0.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .glassCard { padding: 40px 20px; }
+  .inputGrid { grid-template-columns: 1fr; row-gap: 30px; }
+  .title { font-size: 2.2rem; }
+  .submitBtn { max-width: 100%; }
+}
+
+
+
+
+
+/* Optimized CSS snippet */
+.focusLine {
+  transform: scaleX(0);
+  transition: transform 0.3s ease; /* Faster than animating width */
+}
+
+.formInput:focus ~ .focusLine {
+  transform: scaleX(1);
+}
+
+.formInput {
+  will-change: transform, opacity; /* Hints the browser to optimize */
+}

@@ -1,0 +1,64 @@
+/* ===============================
+   FEATURES — STATIC & GROUNDED
+================================ */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.8rem;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* ===============================
+   FEATURE CARD
+================================ */
+
+.feature-card {
+  background: rgba(15, 18, 25, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2.6rem 2.4rem;
+
+  /* fully fixed */
+  position: relative;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.feature-highlight {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(249, 115, 22, 0.9);
+  margin-bottom: 1.2rem;
+}
+
+.feature-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 0.8rem;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .features {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+}
