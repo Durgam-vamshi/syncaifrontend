@@ -1,4 +1,4 @@
-import "../styles/insightSection.css";
+import "../styles/insightsection.css";
 
 export default function InsightSection() {
   return (
