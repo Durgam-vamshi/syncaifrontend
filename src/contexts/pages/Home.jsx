@@ -22,12 +22,12 @@ export default function Home() {
           element={
             <>
               <Hero />
-              <Testimonials />
-              <ValueSection />
               <Problems/>
               <Philosophy/>
               <Process/>
               <IntegrationEcosystem/>
+              <ValueSection />
+              <Testimonials />
               <InsightSection/>
               <PrimaryCTA/>   
             </>

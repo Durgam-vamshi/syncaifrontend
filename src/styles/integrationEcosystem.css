@@ -1,7 +1,3 @@
-/* =================================================
-   INTEGRATION ECOSYSTEM — BASE
-================================================= */
-
 .integration-section {
   padding: clamp(5rem, 10vw, 9rem) 2rem;
   background: #000;
@@ -13,9 +9,7 @@
   text-align: center;
 }
 
-/* =================================================
-   TITLE
-================================================= */
+
 
 .integration-title {
   font-size: clamp(1.9rem, 4.5vw, 3.4rem);
@@ -209,9 +203,9 @@
 
 
 .integration-title {
-  color: #ffffff; /* white for "Our" & "Playbook" */
+  color: #ffffff;
 }
 
 .integration-title span {
-  color: rgba(249, 115, 22, 0.95); /* orange for "Integration" */
+  color: rgba(249, 115, 22, 0.95);
 }
