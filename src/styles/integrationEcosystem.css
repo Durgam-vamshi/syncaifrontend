@@ -192,3 +192,19 @@
     height: 120px;
   }
 }
+
+
+@media (max-width: 768px) {
+  .integration-title {
+    text-align: center;
+    align-self: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .integration-title {
+    width: 100%;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
