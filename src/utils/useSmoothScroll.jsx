@@ -62,8 +62,6 @@
 // }
 
 
-
-
 import { useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
@@ -81,39 +79,27 @@ export default function useSmoothScroll(containerRef) {
 
     let loco = null;
 
-    /* ============================
-       MOBILE → Native Scroll Only
-    ============================ */
+    /* =========================
+       MOBILE → PURE NATIVE SCROLL
+    ========================= */
     if (isMobile()) {
-      ScrollTrigger.scrollerProxy(containerRef.current, {
-        scrollTop(value) {
-          return arguments.length
-            ? (containerRef.current.scrollTop = value)
-            : containerRef.current.scrollTop;
-        },
-        getBoundingClientRect() {
-          return {
-            top: 0,
-            left: 0,
-            width: window.innerWidth,
-            height: window.innerHeight
-          };
-        },
-        pinType: "fixed"
-      });
+      // IMPORTANT: kill any existing scrollerProxy
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      ScrollTrigger.clearScrollMemory();
+      ScrollTrigger.refresh(true);
 
-      ScrollTrigger.refresh();
       return;
     }
 
-   
+    /* =========================
+       DESKTOP → LOCOMOTIVE
+    ========================= */
     loco = new LocomotiveScroll({
       el: containerRef.current,
       smooth: true,
-      lerp: 0.08,         
-      multiplier: 1,
-      smartphone: false,  
-      tablet: false       
+      lerp: 0.08,
+      smartphone: false,
+      tablet: false
     });
 
     loco.on("scroll", ScrollTrigger.update);
@@ -138,9 +124,6 @@ export default function useSmoothScroll(containerRef) {
     ScrollTrigger.addEventListener("refresh", () => loco.update());
     ScrollTrigger.refresh();
 
-    /* ============================
-       CLEANUP
-    ============================ */
     return () => {
       ScrollTrigger.removeEventListener("refresh", () => loco?.update());
       loco?.destroy();

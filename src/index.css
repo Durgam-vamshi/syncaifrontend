@@ -31,3 +31,19 @@ html {
 section {
   scroll-margin-top: 100px; 
 }
+
+
+[data-scroll-container] {
+  overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+  }
+
+  [data-scroll-container] {
+    overflow: visible;
+  }
+}
